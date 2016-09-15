@@ -1,4 +1,4 @@
-public class Lab_01_ASCII_2
+public class ASCII2
 {
 	public static void main(String[]args)
 	{
