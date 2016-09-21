@@ -27,24 +27,27 @@ public class Ex_01
 		System.out.println("Please enter the price:");
 		double price3 = kb.nextDouble();
 		
+		double subtotal = price1 + price2 + price3;
+		double tax = 0.08 * subtotal;
+		double total = subtotal + tax;
 		
-		System.out.printf("<<<<<<<<<<<<<<<__Receipt__>>>>>>>>>>>>>>>>");
+		System.out.println("<<<<<<<<<<<<<<<__Receipt__>>>>>>>>>>>>>>>>\n");
 		form.format(item1, price1);
 		form.format(item2, price2);
 		form.format(item3, price3);
-		
-		System.out.printf("\n*           Subtotal: ........        9.01");
-		System.out.printf("\n*                Tax: ........        0.63");
-		System.out.printf("\n*              Total: ........        9.64");
-		System.out.printf("\n__________________________________________");
-		System.out.printf(" \n* Thank you for your support *");
+		System.out.println();
+		form.format("Subtotal:", subtotal);
+		form.format("Tax:", tax);
+		form.format("Total:", total);
+		System.out.println("__________________________________________");
+		System.out.println(" * Thank you for your support *");
 		
 		
 	}
 	
-	public void format(String word, double number)
+	public void format(String item, double price)
 	{
-		System.out.printf("\n*%20s ........    %8.2f", word, number);
+		System.out.printf("*%17s ........%10.2f%n", item, price);
 	}
 	
 
