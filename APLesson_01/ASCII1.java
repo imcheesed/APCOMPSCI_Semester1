@@ -4,6 +4,6 @@ public class ASCII1
 	{
 		System.out.println(" n._.n");
 		System.out.println(" `o o'");
-		System.out.println("(~@~)");
+		System.out.println(" (~@~)");
 	}
 }
