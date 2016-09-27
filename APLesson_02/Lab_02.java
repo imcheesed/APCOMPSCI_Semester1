@@ -4,7 +4,7 @@ public class Lab_02
 	{
 		int a = 3;
 		int b = 11;
-		System.out.println("The product of 3 and 11 is " + a * b);
+		System.out.println("The product of 3 and 11 is " + a * b+".");
 		
 		String Name = "Kien Le";
 		String Address = "1600 Pennsylvania Avenue";
