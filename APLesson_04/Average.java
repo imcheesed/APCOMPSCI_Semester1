@@ -15,15 +15,15 @@ public class Average
 		num2 = kb.nextDouble();
 		System.out.println("What is the third number?");
 		num3 = kb.nextDouble();
-		avg = avg(num1,num2,num3);
+		avg = average();
 		print();
 	}
-	public static double avg(double one, double two, double three)
+	public static double average()
 	{
 		return (one + two + three)/3.0;
 	}
 	public static void print()
 	{
-		System.out.println("The average of " + num1 + ", " + num2 + ", and " + num3 + " is " + avg + ".");
+		System.out.println("The average of %.5f,%.5f, and %.5f is %.5f",num1,num2,num3,avg);
 	}
 }
