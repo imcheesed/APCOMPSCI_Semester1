@@ -3,6 +3,7 @@ public class Rectangle
 {
 		static double l;
 		static double w;
+		static double p;
 		
 		public static void main(String[]args)
 		{
@@ -11,18 +12,15 @@ public class Rectangle
 				l = kb.nextDouble();
 				System.out.println("What is the width?");
 				w = kb.nextDouble();
-				
-				print();
+				p=calcPerim(l,w);
+				System.out.printf("Your perimeter is %.5f.",calcPerim(l,w));
 		}
 		
-		public static double calcPerim()
+		public static double calcPerim(double length, double width)
 		{
 			return 2*length +2*width;
 			
 		}
 		
-		public static void print()
-		{
-			System.out.printf("The perimeter of the rectangle is %.5f.",calcPerim());
-		}
+		
 }
