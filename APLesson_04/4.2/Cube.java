@@ -9,11 +9,15 @@ public class Cube
 		System.out.println("What is the length of the side of the cube?");
 		s = kb.nextDouble();
 		sa = calcSurf(s);
-		System.out.printf("The surface area of the cube is %.5f.",calcSurf(s));
+		print();
 	}
 	public static double calcSurf(double side)
 	{
 		return 6*side*side;
+	}
+	public static void print()
+	{
+		System.out.printf("The surface area of the cube is %.5f.",calcSurf(s));
 	}
 	
 }
