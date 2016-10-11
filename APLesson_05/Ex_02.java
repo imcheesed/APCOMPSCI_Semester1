@@ -2,8 +2,9 @@ import java.util.Scanner;
 public class Ex_02
 {
 	static double price1,price2,price3,price4;
-	static double total;
+	static double subtotal;
 	static double discount;
+	static double total;
 	public static void main(String[]args)
 	{
 		Scanner kb=new Scanner(System.in);
@@ -32,7 +33,7 @@ public class Ex_02
 		
 
 		
-		total = price1+price2+price3+price4;
+		subtotal = price1+price2+price3+price4;
 		String top = "<<<<<<<<<<< Receipt >>>>>>>>>>>>>>";
 		System.out.printf("\n%43s", top);
 		
@@ -43,8 +44,9 @@ public class Ex_02
 		format(item2,price2);
 		format(item3,price3);
 		format(item4,price4);
-		format("Total Price",total);
-		format("Amount Discounted",discount);
+		format("Subtotal",subtotal);
+		format("Discount",discount);
+		format("Total",total);
 		
 		
 		
@@ -59,11 +61,11 @@ public class Ex_02
 	
 	public static void discount()
 	{
-		if(total>=2000)
+		if(subtotal>=2000)
 			discount = 0.15*total;
-		    total = .85*total;
+		    total = subtotal-discount;
 			
-		if(total<2000)
+		if(subtotal<2000)
 		    discount = 0;
 	}
 	public static void format(String items, double prices)

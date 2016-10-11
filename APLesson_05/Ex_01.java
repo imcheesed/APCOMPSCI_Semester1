@@ -2,12 +2,11 @@ import java.util.Random;
 public class Ex_01
 {
 	static int roll1, roll2;
+	
 	public static void main(String[]args)
 	{
 		Random rand = new Random();
-		System.out.println("Player, roll the dice.");
 		roll1 = (rand.nextInt(6)+1);
-		System.out.println("Computer roll the dice.");
 		roll2 = (rand.nextInt(6)+1);
 		
 		System.out.println("Player rolled a "+ roll1 +".");
@@ -18,21 +17,13 @@ public class Ex_01
 
 	public static String rollDice()
 	{
-		String s = ("");
+		String winner = ("");
 		if(roll1>roll2)
-		{
-			s = "Player";
-		}
-			
+			winner = "Player";
 		if(roll1<roll2)
-		{
-			s = "Computer";
-		}
-		
+			winner = "Computer";
 		if(roll1==roll2)
-		{
-			s = "nobody";
-		}
-        return s;
+			winner = "nobody; it is a tie";
+        return winner;
 	}
 }
