@@ -11,7 +11,7 @@ public class Song
 	{
 		for(int i = 1; i <= num; i++)
 		{
-			System.out.printf("%s  \t",lyrics);
+			System.out.printf("%s ",lyrics);
 			
 		}
 		System.out.println("");
