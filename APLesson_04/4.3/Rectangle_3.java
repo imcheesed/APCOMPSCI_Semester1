@@ -1,13 +1,14 @@
 import java.util.Scanner;
 public class Rectangle_3
 {
+	static double l, w;
 	public static void main(String[]args)
 	{
 		Scanner kb = new Scanner(System.in);
 		System.out.println("What is the length?");
-		double l = kb.nextDouble();
+		l = kb.nextDouble();
 		System.out.println("What is the width?");
-		double w = kb.nextDouble();
+		w = kb.nextDouble();
 		print(calcPerim(l,w));
 	}
 	public static double calcPerim(double l, double w)

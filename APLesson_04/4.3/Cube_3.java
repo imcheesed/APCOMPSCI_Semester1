@@ -1,12 +1,13 @@
 import java.util.Scanner;
 public class Cube_3
 {
+	static double s, sa;
 	public static void main(String[]args)
 	{
 		Scanner kb = new Scanner(System.in);
 		System.out.println("What is the length of the side of the cube?");
-		double s = kb.nextDouble();
-		double sa = calcSurf(s);
+		s = kb.nextDouble();
+		sa = calcSurf(s);
 		print(s,sa);
 	}
 	public static double calcSurf(double s)

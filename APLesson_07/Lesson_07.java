@@ -35,7 +35,7 @@ public class Lesson_07
 		
 		while(sentence.indexOf(" ") >= 0)
 		{
-				sentence = sentence.substring(0, sentence.indexOf(" ")) + sentence.substring(sentence.indexOf(" ")+1);
+			sentence = sentence.substring(0, sentence.indexOf(" ")) + sentence.substring(sentence.indexOf(" ")+1);
 		}
 	
 		System.out.println("Without spaces..." + sentence);

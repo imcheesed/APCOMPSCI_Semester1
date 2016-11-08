@@ -1,16 +1,17 @@
 import java.util.Scanner;
 public class Average_3
 {
+	static double num1, num2, num3, average;
 	public static void main(String[]args)
 	{
 		Scanner kb = new Scanner(System.in);
 		System.out.println("What is the first number?");
-		double num1 = kb.nextDouble();
+		num1 = kb.nextDouble();
 		System.out.println("What is the second number?");
-		double num2 = kb.nextDouble();
+		num2 = kb.nextDouble();
 		System.out.println("What is the third number?");
-		double num3 = kb.nextDouble();
-		double average = average(num1,num2,num3);
+		num3 = kb.nextDouble();
+		average = average(num1,num2,num3);
 		print(num1,num2,num3,average);
 		
 	}

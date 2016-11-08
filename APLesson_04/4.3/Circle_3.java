@@ -1,12 +1,13 @@
 import java.util.Scanner;
 public class Circle_3
 {
+	static double r,a;
 	public static void main(String[]args)
 	{
 		Scanner kb = new Scanner(System.in);
 		System.out.println("What is the radius?");
-		double r = kb.nextDouble();
-		double a = calcArea(r);
+		r = kb.nextDouble();
+		a = calcArea(r);
 		print(r,a);
 	}
 	public static double calcArea(double r)

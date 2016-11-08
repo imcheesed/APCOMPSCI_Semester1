@@ -8,16 +8,16 @@ public class Circle
 		Scanner kb = new Scanner(System.in);
 		System.out.println("What is the radius?");
 		r = kb.nextDouble();
-		a = calcArea(r);
+		calcArea(r);
 		print();
 	}
-	public static double calcArea(double radius)
+	public static void calcArea(double radius)
 	{
-		return radius*radius*3.14;
+		a= radius*radius*3.14;
 	}
 	public static void print()
 	{
-		System.out.printf("The area of the circle is %.5f",calcArea(r));
+		System.out.printf("The area of the circle is %.5f",a);
 	}
 	
 }

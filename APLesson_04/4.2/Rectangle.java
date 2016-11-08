@@ -12,12 +12,12 @@ public class Rectangle
 				l = kb.nextDouble();
 				System.out.println("What is the width?");
 				w = kb.nextDouble();
-				calcPerim();
+				calcPerim(l,w);
 				print();
 				
 		}
 		
-		public static double calcPerim(double length, double width)
+		public static void calcPerim(double length, double width)
 		{
 			perimeter = 2*length +2*width;
 			
