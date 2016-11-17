@@ -7,12 +7,12 @@ public class FindTheZs
 	{
 		
 		words = new String[5];
-		fillArray(words);
+		fillArray();
 		System.out.println("For the words,");
-		printArray(words);
-		System.out.println("\nOnly " + hasZs(words) + "contain(s) the letter Z.");
+		printArray();
+		System.out.println("\nOnly " + hasZs() + "contain(s) the letter Z.");
 	}
-	public static void fillArray(String[] words)
+	public static void fillArray()
 	{
 		System.out.println("Enter 5 words: ");
 		for(int i = 0; i < words.length; i ++)
@@ -20,14 +20,14 @@ public class FindTheZs
 			words[i] = kb.next();
 		}
 	}
-	public static void printArray(String[] words)
+	public static void printArray()
 	{
 		for(String word:words)
 		{
 			System.out.print(word+ " ");
 		}
 	}
-	public static String hasZs(String[] words)
+	public static String hasZs()
 	{
 		String zs = " ";
 		for(String word:words)
