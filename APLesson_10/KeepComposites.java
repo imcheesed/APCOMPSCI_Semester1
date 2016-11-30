@@ -10,7 +10,7 @@ public class KeepComposites
 		
 		for(int i=0;i<n.size();i++)
 		{
-			if(!gFactor(n.get(i)))
+			if(gFactor(n.get(i))==0)
             {
 				n.remove(i);
                 i--;
@@ -18,16 +18,16 @@ public class KeepComposites
 		}
 		System.out.println(n);
 	}
-	public static Boolean gFactor(int n)
+	public static Integer gFactor(int n)
 	{
 		for(int i=2;i<n;i++)
 		{
 			if(n%i==0)
 			{
-				return true;
+				return 1;
 			}
 			
 		}
-        return false;
+        return 0;
 	}
 }
