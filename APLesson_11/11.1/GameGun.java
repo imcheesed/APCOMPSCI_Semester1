@@ -19,11 +19,15 @@ public class GameGun
 			System.out.println("Action: R or S");
 			String action=kb.next();
 			if(action.equals("R"))
+			{
 				reload();
-			else if(action.equals("S"))
+			}
+			if(action.equals("S"))
+			{
 				System.out.println(shoot());
+			}
+			System.out.println(printClip());
 			
-			printClip();
 		}
 		System.out.println("Out of bullets");
 		
@@ -40,12 +44,12 @@ public class GameGun
 		if(shotcount>0)
 		{
 			clip[shotcount-1]="[]";
-			shotcount--;
-			return "BOOM!";
+			shotcount-=1;
+			return "BOOM!\n";
 		}
 		else
 		{
-			return "RELOAD";
+			return "RELOAD!\n";
 		}
 	}
 	
@@ -68,7 +72,7 @@ public class GameGun
 		}
 	}
 	
-	public static void printClip()
+	public static String printClip()
 	{
 		String output="";
 		System.out.println("Bullets: \t" + bulletCount + "\nClip: \t");
@@ -76,6 +80,6 @@ public class GameGun
 		{
 			output += clip[i];
 		}
-		System.out.println(output);
+		return output;
 	}
 }

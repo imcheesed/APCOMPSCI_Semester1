@@ -13,7 +13,6 @@ public class GameGun2
 		String turn = "";
 		int damage=0;
 		int amount=0;
-		
 		healthcount=6;
 		health= new String[healthload];
 		
@@ -22,25 +21,26 @@ public class GameGun2
 			System.out.println("Your turn. Hit enter when ready");
 			turn=kb.next();
 			damage=(int)(Math.random()*2)+1;
-			amount=(int)(Math.random()*6)+1;
-			takeD(amount,damage);
+			amount=(int)(Math.random()*3)+1;
+			System.out.println(takeD(damage,amount));
+			printClip();
 		}
-		printClip();
+		System.out.println("You have died");
 	}
-	public static String takeD(int amount, int damage)
+	public static String takeD(int d, int a)
 	{
-		if(damage==1)
+		if(d==1)
 		{
-			healthcount=healthcount-amount;
-			return "Taking " + amount + " damage";
+			healthcount-=a;
+			return "Taking " + a + " damage";
 		}
 		else	
 		{
-			if(healthcount+amount<healthload)
-				healthcount=healthcount+amount;
+			if((healthcount+a)<healthload)
+				healthcount+=a;
 			else
 				healthcount=healthload;
-			return "Power up " + amount;
+			return ("Power up " + a);
 		}
 	}
 	public static void printClip()
@@ -49,10 +49,10 @@ public class GameGun2
 		for(int i=0;i<healthcount;i++)
 		{
 			if(i<healthcount)
-				health[i]=" @ ";
+				health[i]="[ ] ";
 			else
-				health[i]= "[]";
-			output=output+health[i];
+				health[i]= "[x]";
+			output+= health[i];
 		}
 		System.out.println(output);
 	}
