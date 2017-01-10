@@ -18,18 +18,11 @@ public class Distance_Runner
 		y2 = kb.nextInt();
 		
 		Distance_Class object = new Distance_Class(x1,y1,x2,y2);
-		System.out.println("The distance between ("+x1+", "+y1+") and ("+x2+", "+y2+") is " + object.returnDistance());
+		System.out.printf("Distance between the points = %.2f\n",object.getDist());
 		
-		System.out.println("Enter another first x coordinate: ");
-		x1 = kb.nextInt();
-		System.out.println("Enter another first y coordinate: ");
-		y1 = kb.nextInt();
-		System.out.println("Enter another second x coordinate: ");
-		x2 = kb.nextInt();
-		System.out.println("Enter another second y coordinate: ");
-		y2 = kb.nextInt();
 		
-		object.resetCoords(x1,y1,x2,y2);
-		System.out.println("The distance between ("+x1+", "+y1+") and ("+x2+", "+y2+") is " + object.returnDistance());
+		
+		object.setValues(1,5,3,8);
+		System.out.printf("Distance between the points= %.2f",object.getDist());
 	}
 }

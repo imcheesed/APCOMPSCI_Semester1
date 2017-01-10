@@ -19,14 +19,14 @@ public class Distance_Class
 		yTwo=y2;
 		distance=0;
 	}
-	public void resetCoords(int x1, int y1, int x2, int y2)
+	public void setValues(int x1, int y1, int x2, int y2)
 	{
 		xOne=x1;
 		yOne=y1;
 		xTwo=x2;
 		yTwo=y2;
 	}
-	public double returnDistance()
+	public double getDist()
 	{
 		distance = Math.sqrt((xTwo-xOne)*(xTwo-xOne)+(yTwo-yOne)*(yTwo-yOne));
 		return distance;

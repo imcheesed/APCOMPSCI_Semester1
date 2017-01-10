@@ -16,16 +16,11 @@ public class MilesPerHour_Runner
 		
 		MilesPerHour_Class object = new MilesPerHour_Class(d,h,m);
 	
-		System.out.println(d+" miles in "+h+" hours and "+m+" minutes is " + object.returnSpeed());
+		System.out.printf("%d miles in %d hours and %d minutes = %.2f mph%n",object.getDistance(),object.getHours(),object.getMinutes(),object.getMPH());
 		
-		System.out.println("Enter another distance: ");
-		d=kb.nextInt();
-		System.out.println("Enter another time in hours: ");
-		h=kb.nextInt();
-		System.out.println("Enter another time in minutes: ");
-		m=kb.nextInt();
-		object.modifySpeed(d,h,m);
 		
-		System.out.println(d+" miles in "+h+" hours and "+m+" minutes is " + object.returnSpeed());
+		object.modifySpeed(20,4,15);
+		
+		System.out.printf("%d miles in %d hours and %d minutes = %.2f mph",object.getDistance(),object.getHours(),object.getMinutes(),object.getMPH());
 	}
 }
