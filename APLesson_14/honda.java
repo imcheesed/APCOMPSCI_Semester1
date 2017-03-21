@@ -1,27 +1,31 @@
 public class honda implements location
 {
-	private double[] location = new double[2];
+	private double x;
+	private double y;
+	private double[] locate;
 	public honda()
 	{
-		location[0] = 0;
-		location[1] = 1;
+		x = 0;
+		y = 0;
 	}
-	public honda(double[] loc)
+	public honda(double[]loc)
 	{
-		location[0] = loc[0];
-		location[1] = loc[1];
+		locate = loc;
+		x = loc[0];
+		y = loc[1];
 	}
 	public int getID()
 	{
-		return (int)(Math.random() * 1000000);
+		int ID = (int)(Math.random()*Math.pow(10,6))+1;
+		return ID;
 	}
-	public void move(double xm, double ym)
+	public void move(double X, double Y)
 	{
-		location[0] += xm;
-		location[1] += ym;
+		locate[0] += X;
+		locate[1] += Y;
 	}
 	public double[] getLoc()
 	{
-		return location;
+		return locate;
 	}
 }

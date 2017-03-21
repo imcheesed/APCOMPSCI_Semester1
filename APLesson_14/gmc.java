@@ -1,30 +1,30 @@
 public class gmc implements location
 {
-	private double x, y;
+	private double x;
+	private double y;
 	public gmc()
 	{
-		this.x = 0;
-		this.y = 0;
+		x = 0;
+		y = 0;
 	}
-	public gmc(double xc, double yc)
+	public gmc(double X, double Y)
 	{
-		this.x = xc;
-		this.y = yc;
+		x += X;
+		y += Y;
 	}
 	public int getID()
 	{
-		return (int)(Math.random() * 1000000);
+		int ID = (int)(Math.random()*Math.pow(10,6))+1;
+		return ID;
 	}
-	public void move(double xm, double ym)
+	public void move(double X, double Y)
 	{
-		this.x += xm;
-		this.y += ym;
+		x = X;
+		y = Y;
 	}
 	public double[] getLoc()
 	{
-		double[] loc = new double[2];
-		loc[0] = x;
-		loc[1] = y;
+		double[] loc = new double[] {x,y};
 		return loc;
 	}
 }

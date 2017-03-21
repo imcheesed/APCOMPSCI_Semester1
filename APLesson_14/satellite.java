@@ -9,41 +9,33 @@ public class satellite
        locate.add(new toyota("8, 9"));
        locate.add(new gmc(3, 8));
 
+        double[] home = {0, 0};
 
-       double[] home = {0, 0};
-
-
-       String printout = "\n\n" +
+        String printout = "\n\n" +
                "==========================" + "\nStarting locations...";
 
-
-       for (location l : locate)
+        for (location l : locate)
        {
            printout += "\nLocation for " + l.getID() + ": (" + getLocation(l.getLoc()) + ")";
        }
 
-
-       printout += "\n\n" + "==========================" +
+        printout += "\n\n" + "==========================" +
                    "\nDistance from home...";
 
-
-       for (location l : locate)
+        for (location l : locate)
        {
            printout += "\nDistance for " + l.getID() + ": (" + getDistance(l.getLoc(), home)+ ")";
        }
 
-
-       System.out.println(printout);
+        System.out.println(printout);
    }
 
-
-   public static double getDistance(double[] car, double[] home)
+    public static double getDistance(double[] car, double[] home)
    {
        return Math.sqrt((Math.pow(car[0] - home[0], 2)+ Math.pow(car[1] - home[1], 2)));
    }
 
-
-   public static String getLocation(double[] loc)
+    public static String getLocation(double[] loc)
    {
        return loc[0] + ", " + loc[1];
    }

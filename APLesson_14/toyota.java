@@ -1,29 +1,38 @@
+import java.util.Arrays;
 public class toyota implements location
 {
-	private double[] location = new double[2];
+	private double[] loc;
+	private double x;
+	private double y;
 	public toyota()
 	{
-		location[0] = 0;
-		location[1] = 0;
+		x = 0;
+		y = 0;
 	}
-	public toyota(String coords)
+	public toyota(String i)
 	{
-		String[] coordinates = coords.split(", ");
-		location[0] = Double.parseDouble(coordinates[0]);
-		location[1] = Double.parseDouble(coordinates[1]);
+		//in = i;
+		String[] locs = i.split(", ");
+		//loc[0] = Double.parseDouble(locs[0]);
+		//loc[1] = Double.parseDouble(locs[1]);
+		x = Double.parseDouble(locs[0]);
+		y = Double.parseDouble(locs[1]);
 	}
 	public int getID()
 	{
-		return (int)(Math.random() * 1000000);
+		int ID = (int)(Math.random()*Math.pow(10,6))+1;
+		return ID;
 	}
-	public void move(double xm, double ym)
+	public void move(double X, double Y)
 	{
-
-		location[0] += xm;
-		location[1] += ym;
+		//x += X;
+		//y += Y;
+		loc[0] += X;
+		loc[1] += Y;
 	}
 	public double[] getLoc()
 	{
-		return location;
+		double[] loc = new double[] {x,y};
+		return loc;
 	}
 }
