@@ -21,24 +21,40 @@ public class Magpie2
 		 * 	if you enter nothing, or if you accidentally hit
 		 * 	enter. Think to yourself: "What is the length of
 		 * 	an empty String?" */
-
+		if (statement.length() == 0)
+		{
+			response = "Say something, please.";
+		}
 
 		/** To be completed in Exercise_02:
 		 * 	Modify the following code to use the findKeyword
 		 * 	Method (details in "Exercise_02" below. */
-		if (statement.indexOf("no") >= 0)
+		else if (findKeyword(statement, "no", 0) >= 0)
 		{
 			response = "Why so negative?";
 		}
 
-		else if (statement.indexOf("mother") >= 0
-				|| statement.indexOf("father") >= 0
-				|| statement.indexOf("sister") >= 0
-				|| statement.indexOf("brother") >= 0)
+		else if (findKeyword(statement, "mother", 0) >= 0
+				|| findKeyword(statement, "father", 0) >= 0
+				|| findKeyword(statement, "sister", 0) >= 0
+				|| findKeyword(statement, "brother", 0) >= 0)
 		{
 			response = "Tell me more about your family.";
 		}
 
+		else if (findKeyword(statement, "cat", 0) >= 0
+				|| findKeyword(statement, "dog", 0) >= 0
+				|| findKeyword(statement, "fish", 0) >= 0
+				|| findKeyword(statement, "turtle", 0) >= 0)
+		{
+			response = "Tell me more about your pet.";
+		}
+		
+		else if (findKeyword(statement, "robinette", 0) >= 0)
+		{
+			response = "He sounds like a pretty dank teacher.";
+		}
+		
 		/** Exercise_03(Final)
 		 * ==================================================
 		 * Create additional code (another else if) that
@@ -62,12 +78,14 @@ public class Magpie2
 	private int findKeyword(String statement, String goal, int startPos)
 	{
 		/* New String variable phrase = a more searchable version of statement.
-		 	-Use a combination of trim() and toLowerCase() modify statement.
+		 	-Use a combination of trim() and toLowerCase() modify statement. */
+		String phrase = statement.toLowerCase().trim();
+		
+		/* New int variable psn = the location of goal in phrase after
+		   startPos */
+		int psn = phrase.indexOf(goal, startPos);
 
-		   New int variable psn = the location of goal in phrase after
-		   startPos
-
-			-->Refinement: Make sure we find goal by itself, and not part
+		/*	-->Refinement: Make sure we find goal by itself, and not part
 			of another word ("no" vs no in "know"). if you find an occurrence
 			of goal, make sure before and after aren't letters.
 
@@ -75,23 +93,42 @@ public class Magpie2
 				Check if psn > 0 - there is no need to check for before at the
 				beginning of the word
 					set before = the slot in phrase before psn */
+		
+		String before = "";
+		String after = "";
+		
+		while(psn >= 0)
+		{
+			if(psn > 0)
+			{
+				before = String.valueOf(phrase.charAt(psn - 1));
+			}
 
-				//====>code here
 
 				/*check if you can fit goal into the rest of phrase - no need to
 				proceed otherwise
 					set after = the slot in phrase after psn + length of goal */
 
-				//=====> code here
+			if(goal.length() <= phrase.length() - (psn + 1))
+			{
+				after = String.valueOf(phrase.charAt(psn + goal.length()));
+			}
 
 				/* if before and after are not letters (compare before to "a"
 					and after to "z")
-						--return psn
-
-				Otherwise, search for goal in phrase from psn + 1 forward */
-
+						--return psn */
+			if(before.compareTo("A") <= -1 && after.compareTo("A") <= -1)
+			{
+				return psn;
+			}
+				/* Otherwise, search for goal in phrase from psn + 1 forward */
+			
+			else
+			{
+				psn = phrase.indexOf(goal, psn + 1);
+			}
+		}
 		return -1;
-
 	}
 
 	/** Override - this method is used if there are only 2 parameters...*/
