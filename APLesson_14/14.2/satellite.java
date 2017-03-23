@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 public class satellite
 {
    public static void main(String[]args)
@@ -26,10 +27,16 @@ public class satellite
        {
            printout += "\nDistance for " + l.getID() + ": (" + getDistance(l.getLoc(), home)+ ")";
        }
-
+		for(location object : locate)
+			{
+				double x = (Math.random()*100)+1;
+				double y = (Math.random()*100)+1;
+				object.move(x,y);
+				printout += "\n==========================\nAfter " + object.getID() + " Moved(" + x + ", " + y + ")\nNew Location: (" + Arrays.toString(object.getLoc()) + ")";
+			}
         System.out.println(printout);
+		
    }
-
     public static double getDistance(double[] car, double[] home)
    {
        return Math.sqrt((Math.pow(car[0] - home[0], 2)+ Math.pow(car[1] - home[1], 2)));
